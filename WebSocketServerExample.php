@@ -10,7 +10,7 @@
     define('ROOT', dirname(__FILE__));
 
     // Include our WebSocketServer class
-    require_once(ROOT . '/../libs/WebSocketServer.php');
+    require_once(ROOT . '/WebSocketServer.php');
 
     // Some helpful function
     function microtime_float()
