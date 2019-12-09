@@ -46,14 +46,14 @@
             $className = ucfirst($command);
 
             // Check if requestet command is exist and return error if not
-            if(file_exists(ROOT . "/commands/api.cmd.{$command}.php") == false)
+            if(file_exists(ROOT . "/WebSocketServerExample.cmd.{$command}.php") == false)
             {
                 $this->sendText(json_encode(array('id'=>$command, 'error'=>'Unknown command')));
             }
             else
             {
                 // Include command class if it was not loaded before
-                if(class_exists($className) == false) require_once(ROOT . "/commands/api.cmd.{$command}.php");
+                if(class_exists($className) == false) require_once(ROOT . "/WebSocketServerExample.cmd.{$command}.php");
 
                 // Create command thread and start it
                 $thread = new $className((object)array(), array_shift($params));
